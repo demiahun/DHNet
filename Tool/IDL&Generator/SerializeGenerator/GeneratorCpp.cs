@@ -17,9 +17,9 @@ namespace SerializeGenerator
 
             buffVars += "\n\n";
             buffVars += "using namespace std;\n";
-            buffVars += "using namespace NGNet;\n\n\n";
+            buffVars += "using namespace DHNet;\n\n\n";
 
-            buffVars += "namespace NGNet\n";
+            buffVars += "namespace DHNet\n";
             buffVars += "{\n";
 
             foreach( var info in vecInfo )
@@ -28,7 +28,7 @@ namespace SerializeGenerator
                 buffVars += string.Format( "\t{0} packet\n", info.name );
                 buffVars += "\t*/ \n";
 
-                buffVars += string.Format( "\tNGNet::CMessage& operator >> ( CMessage &a, {0} &v )\n", info.name );
+                buffVars += string.Format( "\tDHNet::CMessage& operator >> ( CMessage &a, {0} &v )\n", info.name );
                 buffVars += "\t{\n";
                 foreach( var arg in info.vecArgs )
                 {
@@ -37,7 +37,7 @@ namespace SerializeGenerator
                 buffVars += "\t\treturn a;\n";
                 buffVars += "\t}\n";
 
-                buffVars += string.Format( "\tNGNet::CMessage& operator << ( CMessage &a, const {0} &v )\n", info.name );
+                buffVars += string.Format( "\tDHNet::CMessage& operator << ( CMessage &a, const {0} &v )\n", info.name );
                 buffVars += "\t{\n";
                 foreach( var arg in info.vecArgs )
                 {

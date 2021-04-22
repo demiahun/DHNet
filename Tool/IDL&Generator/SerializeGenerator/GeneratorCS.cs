@@ -23,9 +23,9 @@ namespace SerializeGenerator
             buffVars += "\t* 사용자 정의 List, Dictionary 추가 시에는 Messagemarshal 의 샘플을 보고 추가하자\n";
             buffVars += "\t*/\n";
             buffVars += "\n";
-            buffVars += "using NGNet;\n";
+            buffVars += "using DHNet;\n";
             
-            buffVars += "public class UMessageMarshal : NGNet.MessageMarshal\n";
+            buffVars += "public class UMessageMarshal : DHNet.MessageMarshal\n";
             buffVars += "{\n";
 
             foreach( var info in vecInfo )

@@ -59,7 +59,7 @@ namespace NIDL
                 bufferStubH += string.Format( "namespace {0}\n", group.name );
                 bufferStubH += "{\n";   // namespace {
 
-                bufferStubH += "\tclass Stub : public NGNet::IRmiStub \n";
+                bufferStubH += "\tclass Stub : public DHNet::IRmiStub \n";
                 bufferStubH += "\t{\n"; // class Stub {
                 bufferStubH += "\tpublic:\n";
 
@@ -103,9 +103,9 @@ namespace NIDL
 
                 /*
                  * 패킷 핸들링 함수 선어
-                 * virtual bool ProcessReceivedMessage( HostID remote, NGNet::CMessage* msg ) override;
+                 * virtual bool ProcessReceivedMessage( HostID remote, DHNet::CMessage* msg ) override;
                  */
-                bufferStubH += "\t\tvirtual bool ProcessReceivedMessage( HostID remote, NGNet::CMessage* msg ) override;\n";
+                bufferStubH += "\t\tvirtual bool ProcessReceivedMessage( HostID remote, DHNet::CMessage* msg ) override;\n";
 
 
                 bufferStubH += "\t};\n"; // class Stub }
@@ -124,7 +124,7 @@ namespace NIDL
                 bufferStubCpp += string.Format( "namespace {0}\n", group.name );
                 bufferStubCpp += "{\n"; // namespace {
 
-                bufferStubCpp += "\tbool Stub::ProcessReceivedMessage( HostID remote, NGNet::CMessage* msg )\n";
+                bufferStubCpp += "\tbool Stub::ProcessReceivedMessage( HostID remote, DHNet::CMessage* msg )\n";
                 bufferStubCpp += "\t{\n";   // ProcessReceivedMessage {
 
                 bufferStubCpp += "\t\tswitch( msg->GetID() )\n";
@@ -178,7 +178,7 @@ namespace NIDL
                 bufferProxyH += string.Format( "namespace {0}\n", group.name );
                 bufferProxyH += "{\n";   // namespace {
 
-                bufferProxyH += "\tclass Proxy : public NGNet::IRmiProxy \n";
+                bufferProxyH += "\tclass Proxy : public DHNet::IRmiProxy \n";
                 bufferProxyH += "\t{\n"; // class Proxy {
                 bufferProxyH += "\tpublic:\n";
 
@@ -232,8 +232,8 @@ namespace NIDL
                 // 함수 정의
                 foreach( var packet in group.listTokenPacket )
                 {
-                    // LogInReq( HostID remote, NGNet::RmiContext rmiContext, int iValue ); 만들기
-                    string strFunc = string.Format( "\tvoid Proxy::{0}( HostID remote, NGNet::RmiContext rmiContext", packet.name );
+                    // LogInReq( HostID remote, DHNet::RmiContext rmiContext, int iValue ); 만들기
+                    string strFunc = string.Format( "\tvoid Proxy::{0}( HostID remote, DHNet::RmiContext rmiContext", packet.name );
                     if( packet.vecDataType.Count > 0 )
                     {
                         strFunc += ",";
@@ -291,7 +291,7 @@ namespace NIDL
 
             if( dataType.Contains( "Time" ) )
             {
-                dataType = dataType.Replace( "Time", "CNgTime" );
+                dataType = dataType.Replace( "Time", "CDHTime" );
             }
         }
     }

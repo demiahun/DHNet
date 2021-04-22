@@ -18,7 +18,7 @@ namespace NIDL
             // filename_common.cs 제작
             bufferCommonCS += "using System;\n";
             bufferCommonCS += "using System.Collections.Generic;\n\n\n";
-            bufferCommonCS += "using NGNet;\n";
+            bufferCommonCS += "using DHNet;\n";
 
             for( int i = 0; i < listGroup.Count; ++i )
             {
@@ -43,14 +43,14 @@ namespace NIDL
             bufferStubCS += "using System;\n";
             bufferStubCS += "using System.Net;\n";
             bufferStubCS += "using System.Collections.Generic;\n\n\n";
-            bufferStubCS += "using NGNet;\n";
+            bufferStubCS += "using DHNet;\n";
 
             for( int i = 0; i < listGroup.Count; ++i )
             {
                 var group = listGroup[i];
                 bufferStubCS += string.Format( "namespace {0}\n", group.name );
                 bufferStubCS += "{\n";    // namespace {
-                bufferStubCS += "\tpublic class Stub : NGNet.RmiStub\n";
+                bufferStubCS += "\tpublic class Stub : DHNet.RmiStub\n";
                 bufferStubCS += "\t{\n";    // class {
                 
                 /*
@@ -154,14 +154,14 @@ namespace NIDL
             bufferProxyCS += "using System;\n";
             bufferProxyCS += "using System.Net;\n";
             bufferProxyCS += "using System.Collections.Generic;\n\n\n";
-            bufferProxyCS += "using NGNet;\n";
+            bufferProxyCS += "using DHNet;\n";
 
             for( int i = 0; i < listGroup.Count; ++i )
             {
                 var group = listGroup[i];
                 bufferProxyCS += string.Format( "namespace {0}\n", group.name );
                 bufferProxyCS += "{\n";    // namespace {
-                bufferProxyCS += "\tpublic class Proxy : NGNet.RmiProxy\n";
+                bufferProxyCS += "\tpublic class Proxy : DHNet.RmiProxy\n";
                 bufferProxyCS += "\t{\n";    // class {
 
                 /*
