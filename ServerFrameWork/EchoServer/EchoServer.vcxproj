@@ -173,7 +173,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="Packet\Test.NIDL">
+    <CustomBuild Include="Packet\Test.DIDL">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
       </ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -182,8 +182,8 @@
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\DHNet\util\DIDL.exe -cpp %(FullPath) $(ProjectDir)Packet\</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Filename).DIDL Compliling...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)\%(Filename)_common.h;%(RootDir)%(Directory)\%(Filename)_proxy.cpp;%(RootDir)%(Directory)\%(Filename)_proxy.h;%(RootDir)%(Directory)\%(Filename)_stub.cpp;%(RootDir)%(Directory)\%(Filename)_stub.h;%(Outputs)</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\DHNet\util\NIDL.exe -cpp %(FullPath) $(ProjectDir)Packet\</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename).NIDL Compliling...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\DHNet\util\DIDL.exe -cpp %(FullPath) $(ProjectDir)Packet\</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename).DIDL Compliling...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)\%(Filename)_common.h;%(RootDir)%(Directory)\%(Filename)_proxy.cpp;%(RootDir)%(Directory)\%(Filename)_proxy.h;%(RootDir)%(Directory)\%(Filename)_stub.cpp;%(RootDir)%(Directory)\%(Filename)_stub.h;%(Outputs)</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\DHNet\util\DIDL.exe -cpp %(FullPath) $(ProjectDir)Packet\</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).DIDL Compliling...</Message>
