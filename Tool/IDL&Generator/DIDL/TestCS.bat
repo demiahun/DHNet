@@ -1,1 +1,1 @@
-DIDL.exe -cs Test.DIDL ..\..\ClientFrameWork\Unity3D\Assets\Packet\
+DIDL.exe -cs Test.DIDL ..\..\..\ClientFrameWork\Unity3D\Assets\Scripts\DHNet\Packet\

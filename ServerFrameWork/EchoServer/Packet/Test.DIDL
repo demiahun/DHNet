@@ -1,17 +1,15 @@
 // 기본형 데이터 : bool, int, Int16, UInt16, Int32, UInt32, Int64, UInt64
-// 시간 데이터형 : 스크립트에선 Time(Cpp : CPnTime, CS : DateTime)
-// 스트링 : 스크립트에선 string(Cpp : String(NgStringW), CS : string)
+// 시간 데이터형 : 스크립트에선 Time(Cpp : CDHTime, CS : DateTime)
+// 스트링 : 스크립트에선 string(Cpp : String(StringW), CS : string)
 // 컨테이너 : 스크립트에선 vector, map(CPP : std::vector, std::map, CS : list, Dictionary)
 
 
 packet TestC2S 1000
 {
 	LogInReq( string deviceID, Time tmVaue, vector<int> vecValue );
-	CheckServerInfoReq();
 }
 
 packet TestS2C 1200
 {
 	LogInAck( string deviceID Time tmValue, vector<int> vecValue );
-	CheckServerInfoAck( int iError, EventInfo info );
 }

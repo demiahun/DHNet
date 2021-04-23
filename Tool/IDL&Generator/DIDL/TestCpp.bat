@@ -1,1 +1,1 @@
-DIDL.exe -cpp Test.DIDL ..\..\ServerFrameWork\EchoServer\Packet\
+DIDL.exe -cpp Test.DIDL ..\..\..\ServerFrameWork\EchoServer\Packet\
