@@ -4,7 +4,7 @@
 
 namespace TestC2S
 {
-	void Proxy::LogInReq( HostID remote, DHNet::RmiContext rmiContext, const String &deviceID, const CDHTime &tmVaue, const std::vector<int> &vecValue )
+	void Proxy::LogInReq( HostID remote, DHNet::RmiContext rmiContext, const FString &deviceID, const FDateTime &tmVaue, const TArray<int> &vecValue )
 	{
 		auto msg = CMessage::Create();
 		msg->SetID( Rmi_LogInReq );
@@ -17,7 +17,7 @@ namespace TestC2S
 
 namespace TestS2C
 {
-	void Proxy::LogInAck( HostID remote, DHNet::RmiContext rmiContext, const String &deviceID, const CDHTime &tmValue, const std::vector<int> &vecValue )
+	void Proxy::LogInAck( HostID remote, DHNet::RmiContext rmiContext, const FString &deviceID, const FDateTime &tmValue, const TArray<int> &vecValue )
 	{
 		auto msg = CMessage::Create();
 		msg->SetID( Rmi_LogInAck );

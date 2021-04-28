@@ -10,9 +10,9 @@ namespace TestC2S
 		{
 		case Rmi_LogInReq:
 			{
-				String deviceID; *msg >> deviceID;
-				CDHTime tmVaue; *msg >> tmVaue;
-				std::vector<int> vecValue; *msg >> vecValue;
+				FString deviceID; *msg >> deviceID;
+				FDateTime tmVaue; *msg >> tmVaue;
+				TArray<int> vecValue; *msg >> vecValue;
 
 				bool _ret = LogInReq( remote, deviceID, tmVaue, vecValue );
 				if( _ret == false )
@@ -33,9 +33,9 @@ namespace TestS2C
 		{
 		case Rmi_LogInAck:
 			{
-				String deviceID; *msg >> deviceID;
-				CDHTime tmValue; *msg >> tmValue;
-				std::vector<int> vecValue; *msg >> vecValue;
+				FString deviceID; *msg >> deviceID;
+				FDateTime tmValue; *msg >> tmValue;
+				TArray<int> vecValue; *msg >> vecValue;
 
 				bool _ret = LogInAck( remote, deviceID, tmValue, vecValue );
 				if( _ret == false )

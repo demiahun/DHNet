@@ -1,7 +1,7 @@
 // 기본형 데이터 : bool, int, Int16, UInt16, Int32, UInt32, Int64, UInt64
-// 시간 데이터형 : 스크립트에선 Time(Cpp : CDHTime, CS : DateTime)
-// 스트링 : 스크립트에선 string(Cpp : String(StringW), CS : string)
-// 컨테이너 : 스크립트에선 vector, map(CPP : std::vector, std::map, CS : list, Dictionary)
+// 시간 데이터형 : 스크립트에선 Time(Cpp : CDHTime, UE Cpp : FDateTime, CS : DateTime)
+// 스트링 : 스크립트에선 string(Cpp : String(NgStringW), UE Cpp : FString, CS : string)
+// 컨테이너 : 스크립트에선 vector, map(CPP : std::vector, std::map, UE Cpp : TArray, TMap, CS : list, Dictionary)
 
 
 packet TestC2S 1000
